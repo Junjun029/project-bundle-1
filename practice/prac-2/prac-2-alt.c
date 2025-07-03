@@ -8,6 +8,7 @@ int main() {
     int sum = 0;
     
     do {
+        printf("> ");
         scanf("%d", &input_value);
         sum += input_value;
         printf("sum: %d\n", sum);
