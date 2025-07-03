@@ -10,6 +10,7 @@ int main() {
     for(;sum <= 100;) {
         scanf("%d", &input_val);
         sum += input_val;
+        printf("sum: %d\n", sum);
     }
 
     printf("exceeds 100.\nsum: %d", sum);
