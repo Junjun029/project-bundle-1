@@ -14,7 +14,7 @@ int main() {
 
     }while(sum <= 100);
     
-    printf("Exceeds 100\nfinal sum: %d", sum);
+    printf("Exceeds 100\nfinal sum: %d\n", sum);
 
     return 0;
 }
