@@ -10,7 +10,7 @@ int main() {
     do {
         scanf("%d", &input_value);
         sum += input_value;
-        printf("sum: %d", sum);
+        printf("sum: %d\n", sum);
 
     }while(sum <= 100);
     
