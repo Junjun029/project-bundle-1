@@ -6,7 +6,7 @@ int main() {
     int guesses = 3;
 
     while(guesses > 0) {
-        scanf("%d ", &input_value);
+        scanf("%d", &input_value);
         if (input_value > value_to_guess) {
             printf("Too high!\n");
             guesses -= 1;
