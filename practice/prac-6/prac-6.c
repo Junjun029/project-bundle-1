@@ -23,9 +23,10 @@ int main() {
         }
     }
 
-    if (guesses == 0) 
+    if (guesses == 0) {
         printf("GAME OVER!!!!\n NOOOOOOOOOOOOOOOOOOB !!!!!\n");
         return 0;
+    }
 
     return 0;
 }
