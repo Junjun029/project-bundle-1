@@ -11,12 +11,9 @@ int main() {
     scanf("%d", &input_value);
 
     for(; N <= input_value;N+=3) {
-        printf("%d ", N);
-        if (N > input_value) {
-            break;
-        }   
+        printf("%d ", N); 
         
-        if (N <= input_value) {
+        if ((N + 3)<= input_value) {
             printf("+");
         }
         sum_of_N += N;
