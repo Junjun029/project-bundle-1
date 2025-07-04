@@ -1,5 +1,5 @@
 /* practice number seven 
-* 1 4 7 10 <= N
+* 1 + 4 + 7 + 10 <= N
 */
 #include <stdio.h>
 
@@ -11,7 +11,7 @@ int main() {
     scanf("%d", &input_value);
 
     for(; N <= input_value;N+=3) {
-        printf("%d", N); 
+        printf(" %d ", N); 
         
         if ((N + 3)<= input_value) {
             printf("+");
