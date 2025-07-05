@@ -14,8 +14,10 @@ int main() {
 
     // gcd
     for (int i = 1; i <= min; i++) {
-        if (a % i == 0 && b % i == 0 && (i + 1) > min){
+        printf("%d ", i);
+        if (a % i == 0 && b % i == 0){
             printf("gcd: %d\n", i);
+            break;
         }
     }
     
