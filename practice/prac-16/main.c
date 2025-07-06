@@ -3,7 +3,7 @@
 int main() {
     int a = 0, b = 0;
 
-    int temp = 0;
+    int gcd = 0;
     
     printf("a: ");
     scanf("%d", &a);
@@ -17,18 +17,15 @@ int main() {
     // gcd
     for(int i = 1;i <= min;i++) {
        if (min%i == 0 && max%i == 0) {
-            temp = i;
-            printf("%d ", temp);
+            gcd = i;
+            printf("%d ", gcd);
        }
     }
 
-    printf("\ngcd: %d\n", temp);
+    printf("\ngcd: %d\n", gcd);
 
     // lcm
-    int x=0,y=0;
-    x = min/temp;
-    int lcm = 0;
-    lcm = max*x;
+    int lcm  = (min/gcd)*max;
     printf("lcm: %d\n", lcm);
     
     return 0;
