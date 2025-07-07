@@ -4,12 +4,13 @@
 #include <stdio.h>
 
 int main() {
+    const int big_price = 52;
+    const int small_price = 40;
+    const double tax = 0.06;
+
     int valid_duration = 30;
-    int big_price = 35;
-    int small_price = 25;
     int small_room = 0;
     int big_room = 0;
-    double tax = 0.06;
     int small_total = 0;
     int big_total = 0;
     int cost = 0;
