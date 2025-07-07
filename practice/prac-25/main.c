@@ -1,27 +1,5 @@
 #include <stdio.h>
 
-int totalRainfall(double arr[][12], int row, int col) {
-    double sum = 0;
-    for(int i = 0;i<row;i++) {
-        for(int j = 0;j<col;j++) {
-            sum += arr[i][j];
-        }
-        printf("year %d rainfall: %.2lf\n", i + 1, sum);
-        sum = 0.00;
-    }
-}
-
-int monthlyAvg(double arr[][12], int row, int col) {
-    double avg = 0;
-    for(int i = 0; i<row;i++) {
-        for(int j = 0;j<col;j++) {
-            avg  += arr[i][j];
-        }
-        avg = avg/12;
-        printf("Year %d Average: %.2lf\n", i + 1, avg);
-        avg = 0.0;
-    }
-}
 
 int main() {
     double arr[5][12] = { //5 years, 12 months
@@ -31,10 +9,33 @@ int main() {
                     {4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,3.4,2.1,3.4},
                     {5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9,5.3,4.3,4.4}
     };
+    
+    double avg[12] = {};
+    double total[5] = {};
 
-    totalRainfall(arr, 5, 12);
-    printf("\n");
-    monthlyAvg(arr, 5, 12);
+    // monthly average
+    for(int i = 0; i<12;i++) {
+        for(int j = 0;j<5;j++) {
+            avg[i] += arr[j][i];
+        }
+        avg[i] = avg[i] / 5;
+    }   
+
+    for(int n = 0;n < 12;n++) {
+        printf("%.2lf\n", avg[n]);
+
+    }
+
+    //yearly total precipitation
+    for(int i = 0;i<5;i++) {
+        for(int j = 0;j<12;j++) {
+            total[i] += arr[i][j];
+        }
+    }
+
+    for(int n = 0;n < 5;n++) {
+        printf("\n%.2lf\n", total[n]);
+    }
 
     return 0;
 }
