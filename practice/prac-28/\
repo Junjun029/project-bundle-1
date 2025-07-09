@@ -23,14 +23,8 @@ int main() {
 void play(int game[][3]) {
     int player = 1;
     int playerChoice = 0;
-    int full = 0;
-
     while(1) {
-        if (full == 9) {
-            printf("Game draw!\n"); 
-            break;
-        }
-        printf("Player %d ", player ? 1:2);
+        printf("Player %d ", player);
         scanf("%d", &playerChoice);
         switch(playerChoice) {
             case 1: 
@@ -38,72 +32,70 @@ void play(int game[][3]) {
                     printf("Slot is taken bruh -_-\n");
                     continue;
                 }
-                game[0][0] = player;
+                player ? game[0][0] = 1 : game[0][0] = 0;
                 break;
             case 2:
                 if (game[0][1] == 1 || game[0][1] == 0) {
                     printf("Slot is taken bruh -_-\n");
                     continue;
                 }
-                game[0][1] = player;
+                game[0][1] = 1;
                 break;
             case 3:
                 if (game[0][2] == 1 || game[0][2] == 0) {
                     printf("Slot is taken bruh -_-\n");
                     continue;
                 }
-                game[0][2] = player;
+                game[0][2] = 1;
                 break;
             case 4:
                 if (game[1][0] == 1 || game[1][0] == 0) {
                     printf("Slot is taken bruh -_-\n");
                     continue;
                 }
-                game[1][0] = player;
+                game[1][0] = 1;
                 break;
             case 5:
                 if (game[1][1] == 1 || game[1][1] == 0) {
                     printf("Slot is taken bruh -_-\n");
                     continue;
                 }
-                game[1][1] = player;
+                game[1][1] = 1;
                 break;
             case 6:
                 if (game[1][2] == 1 || game[1][2] == 0) {
                     printf("Slot is taken bruh -_-\n");
                     continue;
                 }
-                game[1][2] = player;
+                game[1][2] = 1;
                 break;
             case 7:
                 if (game[2][0] == 1 || game[2][0] == 0) {
                     printf("Slot is taken bruh -_-\n");
                     continue;
                 }
-                game[2][0] = player;
+                game[2][0] = 1;
                 break;
             case 8:
                 if (game[2][1] == 1 || game[2][1] == 0) {
                     printf("Slot is taken bruh -_-\n");
                     continue;
                 }
-                game[2][1] = player;
+                game[2][1] = 1;
                 break;
             case 9:
                 if (game[2][2] == 1 || game[2][2] == 0) {
                     printf("Slot is taken bruh -_-\n");
                     continue;
                 }
-                game[2][2] = player;
+                game[2][2] = 1;
                 break;
             default:
-                printf("It's 1-9 dumbass\n");
-                continue; 
+                printf(""); 
         }
         displayGrid(game);
-        if(player || !player) {
+        if(player) {
             player = !player;
-            full++;
         }
     }
 }
