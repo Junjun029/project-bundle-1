@@ -20,9 +20,6 @@ int main() {
             system("sudo apt install figlet");
         case 2:
             system("sudo pacman -S figlet");
-        default:
-            printf("apalah gaada di opsi");
-            return 1;
     }
 
     int game[3][3] = {{-1,-1,-1},
