@@ -56,86 +56,81 @@ void play(int game[][3]) {
 
     while(1) {
         system("clear");
+        system("figlet TIC TAC TOE!");
         printf("\n============================================================\n");
         displayGridDefault();
         printf("\n============================================================\n");
         displayGrid(game);
         if(checkWin(game, 1)) {
-            printf("Player %d wins!", 1);
-            break;
+            system("figlet PLAYER 1");
+            printf("\n");
+            system("figlet IS THE WINNER!");
+            return;
         }
         if(checkWin(game, 0)) {
-            printf("Player %d wins!", 2);
-            break;
+            system("figlet PLAYER 2");
+            printf("\n");
+            system("figlet IS THE WINNER!");
+            return;
         }
         
         if (full == 9) {
-            
             printf("Game draw!\n"); 
-            break;
+            return;
         }
         printf("Player %d ", player ? 1:2);
         scanf("%d", &playerChoice);
         switch(playerChoice) {
             case 1: 
                 if (game[0][0] == 1 || game[0][0] == 0) {
-                    printf("Slot is taken bruh -_-\n");
                     continue;
                 }
                 game[0][0] = player;
                 break;
             case 2:
                 if (game[0][1] == 1 || game[0][1] == 0) {
-                    printf("Slot is taken bruh -_-\n");
                     continue;
                 }
                 game[0][1] = player;
                 break;
             case 3:
                 if (game[0][2] == 1 || game[0][2] == 0) {
-                    printf("Slot is taken bruh -_-\n");
                     continue;
                 }
                 game[0][2] = player;
                 break;
             case 4:
                 if (game[1][0] == 1 || game[1][0] == 0) {
-                    printf("Slot is taken bruh -_-\n");
                     continue;
                 }
                 game[1][0] = player;
                 break;
             case 5:
                 if (game[1][1] == 1 || game[1][1] == 0) {
-                    printf("Slot is taken bruh -_-\n");
                     continue;
                 }
                 game[1][1] = player;
                 break;
             case 6:
                 if (game[1][2] == 1 || game[1][2] == 0) {
-                    printf("Slot is taken bruh -_-\n");
                     continue;
                 }
                 game[1][2] = player;
                 break;
             case 7:
                 if (game[2][0] == 1 || game[2][0] == 0) {
-                    printf("Slot is taken bruh -_-\n");
                     continue;
                 }
                 game[2][0] = player;
                 break;
             case 8:
                 if (game[2][1] == 1 || game[2][1] == 0) {
-                    printf("Slot is taken bruh -_-\n");
                     continue;
                 }
                 game[2][1] = player;
                 break;
             case 9:
                 if (game[2][2] == 1 || game[2][2] == 0) {
-                    printf("Slot is taken bruh -_-\n");
                     continue;
                 }
                 game[2][2] = player;
