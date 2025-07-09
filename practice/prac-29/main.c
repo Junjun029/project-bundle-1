@@ -1,3 +1,5 @@
+// TOOK ME 2 HOURS BRO WTF 
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,6 +19,20 @@ int main() {
     return 0;
 }
 
+int checkWin(int game[][3], int player) {
+    if(game[0][0] == game[1][0] && game[1][0] == game[2][0] && game[2][0] == player ||
+       game[0][1] == game[1][1] && game[1][1] == game[2][1] && game[2][1] == player ||
+       game[0][2] == game[1][2] && game[1][2] == game[2][2] && game[2][2] == player ||
+       game[0][0] == game[0][1] && game[0][1] == game[0][2] && game[0][2] == player ||
+       game[1][0] == game[1][1] && game[1][1] == game[1][2] && game[1][2] == player ||
+       game[2][0] == game[2][1] && game[2][1] == game[2][2] && game[2][2] == player ||
+       game[0][2] == game[1][1] && game[1][1] == game[2][0] && game[2][0] == player ||
+       game[0][0] == game[1][1] && game[1][1] == game[2][2] && game[2][2] == player) {
+       return 1;
+    }
+    return 0;
+}
+
 void play(int game[][3]) {
     int player = 1;
     int playerChoice = 0;
@@ -30,10 +46,11 @@ void play(int game[][3]) {
         printf("\n===============================================================\n");
         displayGrid(game);
 
-        if(checkWin(game, player) == 1) {
+        if(checkWin(game, 1)) {
             system("figlet Player 1 Wins!");
             return;
-        }else if(checkWin(game, player) == 0) {
+        }
+        if(checkWin(game, 0)) {
             system("figlet Player 2 Wins!");
             return;
         }
@@ -118,26 +135,6 @@ void play(int game[][3]) {
     }
 }
 
-int checkWin(int game[][3], int player) {
-    int result = 0;
-    if(game[0][0] == game[0][1] && game[0][1] == game[0][2] && game[0][2] == player)
-        result = player;
-    if(game[1][0] == game[1][1] && game[1][1] == game[1][2] && game[1][2] == player)
-        result = player;
-    if(game[2][0] == game[2][1] && game[2][1] == game[2][2] && game[2][2] == player)
-        result = player;
-    if(game[0][0] == game[1][0] && game[1][0] == game[2][0] && game[2][0] == player)
-        result = player;
-    if(game[0][1] == game[1][1] && game[1][1] == game[2][1] && game[2][1] == player)
-        result = player;
-    if(game[0][2] == game[1][2] && game[1][2] == game[2][2] && game[2][2] == player)
-        result = player;
-    if(game[0][0] == game[1][1] && game[1][1] == game[2][2] && game[2][2] == player)
-        result = player;
-    if(game[0][2] == game[1][1] && game[1][1] == game[2][0] && game[2][0] == player)
-        result = player;
-    return result;
-}
 
 void displayGridDefault() {
     for(int i = 1;i <= 9;i++) {
