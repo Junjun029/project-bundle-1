@@ -11,16 +11,7 @@ void play(int game[][3]);
 int checkWin(int game[][3], int player);
 
 int main() {
-    printf("Kamu pake package manager apa? 1. apt\n2. pacman\n");
-    printf("Tulis angka: ");
-    int choice = 0;
-    scanf("%d", &choice);
-    switch(choice) {
-        case 1:
-            system("sudo apt install figlet");
-        case 2:
-            system("sudo pacman -S figlet");
-    }
+    printf("JANGAN LUPA INSTALL FIGLET DULU\n\n\n");
 
     int game[3][3] = {{-1,-1,-1},
                       {-1,-1,-1},
